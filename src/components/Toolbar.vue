@@ -1,72 +1,73 @@
 <template>
-  <div class = "toolbar">
-    <ol>
-      <li v-for="(item, index) in items" :key=index>
-         <router-link v-bind:to=item.path>
-            {{ item.title }}
-         </router-link>
-      </li>
-    </ol>
-  </div>
+  <header>
+    <v-app-bar
+      app
+      dark
+    >
+      <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
+      <v-toolbar-title>MyPortfolioSite</v-toolbar-title>
+      <v-tabs>
+        <v-tab
+          v-for="(menuItem, index) in menuItems"
+          :key="index"
+        >
+          {{ menuItem.name }}
+        </v-tab>
+      </v-tabs>
+    </v-app-bar>
+    <v-navigation-drawer
+      v-model="drawer"
+      absolute
+      temporary
+    >
+      <v-list
+        nav
+        dense
+      >
+        <v-list-item-group>
+          <v-list-item
+            v-for="(menuItem, index) in menuItems"
+            :key="index"
+          >
+            <v-list-item-title>{{ menuItem.name }}</v-list-item-title>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
+  </header>
 </template>
-
+ 
 <script>
+import constants from '../style/common/constants'
+ 
 export default {
   name: 'Toolbar',
   data () {
     return {
-      items: [
-        { title: 'Home', path: '/' },
-        { title: 'About', path: '/about' },
-        { title: 'Member', path: '/member' },
-      ]
+      drawer: false,
+      menuItems: constants.menuItems
     }
   }
 }
 </script>
-
-<style scoped>
-
-/* 
-.toolbar{
-    height: 100px;
-    background-color: blue;
-} */
-
-ol {
-  margin-left: auto;
-  width: 480px;
-  display:flex;
-  justify-content: center;
-  padding: 0;
-  list-style: none;
-  /* background-color: blue; */
+ 
+<style lang="scss" scoped>
+.v-toolbar__title {
+  overflow: visible !important;
+  margin-right: 50px !important;
+}
+ 
+.v-app-bar__nav-icon {
+  @include display_pc {
+    display: none !important;
   }
-
-li {
-  width: 100px;
-  height: 50px;
-  margin-left:5px;
-  margin-right:5px;
-  font-size: 14px;
-  border-radius: 8px;
-  position: relative;
 }
-
-li:hover {
-  opacity: 0.4;
+ 
+.v-tabs {
+  display: none;
+ 
+  @include display_pc {
+    display: block !important;
+  }
 }
-
-/*  router-linkがaタグとして表示されてたのでスタイルをaタグに書いた*/
-a {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  color: white;
-  text-decoration: none;
-  line-height: 50px;
-}
-
 </style>
