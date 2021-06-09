@@ -1,3 +1,16 @@
+# docker
+## docker build
+
+```
+docker-compose up -d
+```
+
+## open docker-compose bash
+```
+docker-compose exec app bash
+```
+
+
 # app
 
 ## Project setup
