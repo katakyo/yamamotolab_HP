@@ -1,20 +1,16 @@
 <template>
-  <v-footer
-    dark
-    absolute
-  >
-   <div class="footer">
-      Copyright test 2020. All right reserved
+  <v-footer dark absolute>
+    <div class="footer">
+      Copyright test 2021. All right reserved
     </div>
   </v-footer>
 </template>
 
 <script>
 export default {
-  name: 'Footer',
-}
+  name: "Footer",
+};
 </script>
-
 
 <style lang="scss" scoped>
 .footer {
