@@ -1,16 +1,19 @@
 <template>
-  <hello-world />
+  <section class="home">
+    <Hero/>
+  </section>
 </template>
-
-<script lang="ts">
-  import Vue from 'vue'
-  import HelloWorld from '../components/HelloWorld.vue'
-
-  export default Vue.extend({
-    name: 'Home',
-
-    components: {
-      HelloWorld,
-    },
-  })
+<script>
+import Hero from '../components/Hero.vue'
+ 
+export default {
+  components: {
+    Hero
+  }
+}
 </script>
+<style lang="scss" scoped>
+.home {
+  padding-bottom: 50px;
+}
+</style>
