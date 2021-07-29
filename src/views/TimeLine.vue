@@ -84,8 +84,8 @@
         {
           color: 'cyan',
           month: 'January',
-          title: '研究室配属',
-          summary: '研究室配属されるぞ',
+          title: '卒論執筆',
+          summary: 'いそがしくなります',
         },
         {
           color: 'cyan',
