@@ -32,17 +32,17 @@
 </template>
  
 <script>
-import constants from '../styles/common/constants' // 今回追加
- 
+import constants from '../styles/common/constants'; // 今回追加
+
 export default {
   name: 'Toolbar',
-  data () {
+  data() {
     return {
       drawer: false,
-      menuItems: constants.menuItems // 今回追加
-    }
-  }
-}
+      menuItems: constants.menuItems, // 今回追加
+    };
+  },
+};
 </script>
  
 <style lang="scss" scoped>

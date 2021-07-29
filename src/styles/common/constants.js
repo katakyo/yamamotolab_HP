@@ -5,14 +5,6 @@ export default {
         url: '/'
       },
       {
-        name: 'About',
-        url: '/about'
-      },
-      {
-        name: 'Research',
-        url: '/research'
-      },
-      {
         name: 'Achievements',
         url: '/achievement'
       },
@@ -23,6 +15,10 @@ export default {
       {
         name: 'Access',
         url: '/access'
+      },
+      {
+        name: 'Timeline',
+        url: '/timeline'
       }
     ]
   }
