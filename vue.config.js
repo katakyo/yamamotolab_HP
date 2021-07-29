@@ -1,4 +1,9 @@
 module.exports = {
+  pwa: {
+    iconPaths: {
+      favicon32: './img/icon/favicon.ico',
+    }
+  },
   transpileDependencies: [
     'vuetify'
   ],
