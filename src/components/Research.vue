@@ -3,7 +3,7 @@
   <h1>研究テーマ</h1>
 <v-row>
       <v-col v-for="item in items" :key="item">
-        <v-card class="mx-auto" width="300" height="330">
+        <v-card class="mx-auto" width="300" height="330" padding = "20">
           <v-img
             class="white--text align-end"
             height="200px"

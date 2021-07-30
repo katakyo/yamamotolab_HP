@@ -2,6 +2,17 @@
 <v-contents>
 <div class = "member">
   <h1>研究室メンバー</h1>
+  <div v-for="item0 in SuperBoss" :key="item0">
+    <h2>{{item0.grade[0]}}</h2>
+    {{item0.name}}
+  </div>
+  <div v-for="item in Boss" :key="item">
+    <h2>{{item.grade[0]}}</h2>
+    <v-avatar>
+    <v-img :src= "item.image.url"></v-img>
+    </v-avatar>
+    {{item.name}}
+  </div>
   <h2>M2</h2>
   <div v-for="item1 in M2" :key="item1">
     {{item1.name}}
@@ -27,7 +38,8 @@ export default {
       M1: [],
       M2: [],
       B4: [],
-      other : [],
+      Boss: [],
+      SuperBoss: [],
     }
   ),
   mounted() {
@@ -48,8 +60,10 @@ export default {
               this.M2.push(this.items[i]);
             } else if (this.items[i].grade[0] === 'B4') {
               this.B4.push(this.items[i]);
+            } else if (this.items[i].grade[0] === '名誉教授') {
+              this.SuperBoss.push(this.items[i]);
             } else {
-              this.other.push(this.items[i]);
+              this.Boss.push(this.items[i]);
             }
           }
         });
