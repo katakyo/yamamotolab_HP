@@ -8,14 +8,29 @@
 
 <style lang="scss" scoped>
 
-.research{
+.About{
+  h1 {
+    position: relative;
+    display: inline-block;
+    padding: 0 55px;
+  }
 
-  margin: 60px;
-  padding: 60px;
-}
+  h1:before, h1:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    width: 45px;
+    height: 1px;
+    background-color: black;
+  }
 
-.summary {
-  white-space: pre-wrap;
+  h1:before {
+    left:0;
+  }
+  h1:after {
+    right: 0;
+  }
 }
 
 </style>

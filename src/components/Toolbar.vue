@@ -9,7 +9,7 @@
         max-width="100"
         contain
       ></v-img>
-        <v-tabs>
+        <v-tabs right>
           <v-tab
             v-for="(menuItem, index) in menuItems"
             :key="index"
@@ -19,7 +19,7 @@
           </v-tab>
         </v-tabs>
       </v-app-bar>
-            <v-navigation-drawer v-model="drawer" fixed temporary>
+      <v-navigation-drawer v-model="drawer" fixed temporary>
         <v-list nav dense>
           <v-list-item-group>
             <v-list-item v-for="(menuItem, index) in menuItems" :key="index" :to="menuItem.url">
