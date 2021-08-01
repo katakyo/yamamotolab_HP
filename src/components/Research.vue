@@ -3,7 +3,7 @@
   <h1>研究テーマ</h1>
 <v-row>
       <v-col v-for="item in items" :key="item">
-        <v-card class="mx-auto" width="300" height="330">
+        <v-card class="mx-auto" width="300" height="330" padding = "20">
           <v-img
             class="white--text align-end"
             height="200px"
@@ -54,10 +54,33 @@ export default {
 
 .research{
   padding: 60px;
-}
+  h1 {
+    position: relative;
+    display: inline-block;
+    padding: 0 55px;
+  }
 
-.summary {
+  h1:before, h1:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    width: 45px;
+    height: 1px;
+    background-color: black;
+  }
+
+  h1:before {
+    left:0;
+  }
+  h1:after {
+    right: 0;
+  }
+  .summary {
   white-space: pre-wrap;
 }
+}
+
+
 
 </style>
