@@ -2,28 +2,8 @@
 <v-contents>
 <div class = "member">
   <h1>研究室メンバー</h1>
-  <div v-for="item0 in SuperBoss" :key="item0">
-    <h2>{{item0.grade[0]}}</h2>
-    {{item0.name}}
-  </div>
-  <div v-for="item in Boss" :key="item">
-    <h2>{{item.grade[0]}}</h2>
-    <v-avatar>
-    <v-img :src= "item.image.url"></v-img>
-    </v-avatar>
-    {{item.name}}
-  </div>
-  <h2>M2</h2>
-  <div v-for="item1 in M2" :key="item1">
-    {{item1.name}}
-  </div>
-  <h2>M1</h2>
-  <div v-for="item2 in M1" :key="item2">
-    {{item2.name}}
-  </div>
-  <h2>B4</h2>
-  <div v-for="item3 in B4" :key="item3">
-    {{item3.name}}
+  <div v-for="item in items" :key="item">
+    <p>{{item.grade[0]}} {{item.name}}</p>
   </div>
 </div>
 </v-contents>
@@ -35,11 +15,6 @@ import axios from 'axios';
 export default {
   data: () => (
     { items: [],
-      M1: [],
-      M2: [],
-      B4: [],
-      Boss: [],
-      SuperBoss: [],
     }
   ),
   mounted() {
@@ -53,19 +28,6 @@ export default {
         })
         .then((res) => {
           this.items = res.data.contents;
-          for (let i = 0; i < this.items.length; i++) {
-            if ( this.items[i].grade[0] === 'M1') {
-              this.M1.push(this.items[i]);
-            } else if (this.items[i].grade[0] === 'M2') {
-              this.M2.push(this.items[i]);
-            } else if (this.items[i].grade[0] === 'B4') {
-              this.B4.push(this.items[i]);
-            } else if (this.items[i].grade[0] === '名誉教授') {
-              this.SuperBoss.push(this.items[i]);
-            } else {
-              this.Boss.push(this.items[i]);
-            }
-          }
         });
     },
   },
