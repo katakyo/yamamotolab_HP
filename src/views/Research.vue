@@ -1,27 +1,25 @@
 <template>
-<v-container>
   <div class="research">
-  <h1>研究テーマ</h1>
-<v-row>
-      <v-col v-for="item in items" :key="item">
-        <v-card :loading="loading" href="/research"
-        class="mx-auto" width="300" height="600" padding = "20">
-          
-          <v-img
-            height="200px"
-            :src= "item.image.url"
-          >
-          </v-img>
-          <v-card-title>{{ item.title }}</v-card-title>
-
-          <v-card-text class="text--primary">
-            <div class="summary">{{ item.summary }} </div>
-          </v-card-text>
-        </v-card>
+    <h1>研究テーマ</h1>
+    <div v-for="item in items" :key="item">
+      <v-container>
+      <v-row>
+      <v-col class="home-about__contents-img">
+      <v-img
+        max-height="300"
+        max-width="500"
+        :src= "item.image.url"
+        >
+      </v-img>
       </v-col>
-    </v-row>
+      <v-col md="5" class="home-about__contents-text">
+        <h2>{{ item.title}}</h2>
+        <p>{{ item.summary }}</p>
+      </v-col>  
+      </v-row>
+      </v-container>
+    </div>
   </div>
-</v-container>
 </template>
 
 
@@ -56,11 +54,11 @@ export default {
 <style lang="scss" scoped>
 
 .research{
-  padding: 60px;
+  padding: 50px;
   h1 {
     position: relative;
     display: inline-block;
-    padding: 0 55px;
+    padding: 0 45px;
   }
 
   h1:before, h1:after {
@@ -82,5 +80,17 @@ export default {
   .summary {
   white-space: pre-wrap;
 }
+}
+.home-about__contents {
+  margin-top: 20px;
+  justify-content: center;
+  
+  &-img {
+    text-align: center;
+  }
+ 
+  &-text {
+    word-wrap: break-word;
+  }
 }
 </style>

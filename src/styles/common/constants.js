@@ -5,6 +5,10 @@ export default {
         url: '/'
       },
       {
+        name: 'Research',
+        url: '/research'
+      },
+      {
         name: 'Achievements',
         url: '/achievement'
       },

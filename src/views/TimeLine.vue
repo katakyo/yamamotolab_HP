@@ -2,6 +2,8 @@
 <div class="timeline">
   <h1>年間スケジュール</h1>
   <p>山本研究室の一年を紹介します</p>
+  <p>ゼミは週に2度(月木)で発表は3週に１度程度です</p>
+  <p>コアタイムはありません</p>
   <v-timeline>
     <v-timeline-item
       v-for="(month, i) in months"
@@ -33,17 +35,6 @@
             v-model="dialog"
             width="500"
           >
-      <template v-slot:activator="{ on, attrs }">
-        <v-btn
-            :color="month.color"
-            class="mx-0"
-            outlined
-            v-bind="attrs"
-            v-on="on"
-          >
-            詳しく
-        </v-btn>
-      </template>
 
       <v-card>
         <v-card-title class="text-h5 grey lighten-2">
@@ -86,55 +77,37 @@
           color: 'pink',
           month: 'April',
           title: '研究室配属',
-          summary: '研究室配属されるぞ',
+          summary: '研究室配属されます',
         },
         {
           color: 'cyan',
           month: 'May',
           title: '研究テーマ決め',
-          summary: '研究室配属されるぞ',
-        },
-        {
-          color: 'cyan',
-          month: 'June',
-          title: '研究室配属',
-          summary: '研究室配属されるぞ',
+          summary: '先輩から卒論テーマの紹介があり、研究テーマが決めていきます',
         },
         {
           color: 'cyan',
           month: 'July',
-          title: '研究室配属',
-          summary: '研究室配属されるぞ',
+          title: '院試',
+          summary: '理科大の推薦院試が初旬、月末に一般入試があります',
         },
         {
           color: 'cyan',
           month: 'August',
-          title: '研究室配属',
-          summary: '研究室配属されるぞ',
+          title: '夏休み',
+          summary: 'ゼミはお休みになります。コロナ前はゼミ旅行がありました',
         },
         {
           color: 'cyan',
           month: 'September',
-          title: '研究室配属',
-          summary: '研究室配属されるぞ',
-        },
-        {
-          color: 'cyan',
-          month: 'October',
-          title: '研究室配属',
-          summary: '研究室配属されるぞ',
-        },
-        {
-          color: 'cyan',
-          month: 'November',
-          title: '研究室配属',
-          summary: '研究室配属されるぞ',
+          title: '中間報告',
+          summary: '前期までの成果を報告します',
         },
         {
           color: 'cyan',
           month: 'December',
-          title: '研究室配属',
-          summary: '研究室配属されるぞ',
+          title: '卒論審査会用プレゼン',
+          summary: '審査会用のプレゼンの内容を詰めていきます',
         },
         {
           color: 'cyan',
@@ -145,14 +118,8 @@
         {
           color: 'cyan',
           month: 'February',
-          title: '研究室配属',
-          summary: '研究室配属されるぞ',
-        },
-        {
-          color: 'cyan',
-          month: 'March',
-          title: '研究室配属',
-          summary: '研究室配属されるぞ',
+          title: '卒論審査会',
+          summary: '二月の初旬に審査会があります。7分間のプレゼンテーションです。',
         },
       ],
     }),

@@ -15,7 +15,7 @@
 
 @import "../styles/common/_mixin.scss";
 .home-hero__content {
-  background: url("../assets/Hero.png");
+  background-image: url("../assets/Hero.png");
   background-size: cover;
   background-position: center center;
   width: 100%;
