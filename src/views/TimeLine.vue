@@ -4,13 +4,21 @@
   <p>山本研究室の一年を紹介します</p>
   <p>ゼミは週に2度(月木)で発表は3週に１度程度です</p>
   <p>コアタイムはありません</p>
-  <v-timeline>
+  <v-timeline
+      :reverse="reverse"
+      dense
+  >
     <v-timeline-item
+      fill-dot
+      class="white--text mb-12"
       v-for="(month, i) in months"
       :key="i"
       :color="month.color"
-      small
+      dense
     >
+    <template v-slot:icon>
+         <span v-text="month.month">月</span>
+    </template>
       <template v-slot:opposite>
         <span
           :class="`headline font-weight-bold ${month.color}--text`"
@@ -74,50 +82,50 @@
       dialog: false,
       months: [
         {
-          color: 'pink',
-          month: 'April',
+          color: 'green accent-3',
+          month: '4',
           title: '研究室配属',
           summary: '研究室配属されます',
         },
         {
-          color: 'cyan',
-          month: 'May',
+          color: 'teal accent-3',
+          month: '5',
           title: '研究テーマ決め',
           summary: '先輩から卒論テーマの紹介があり、研究テーマが決めていきます',
         },
         {
-          color: 'cyan',
-          month: 'July',
+          color: 'cyan accent-3',
+          month: '7',
           title: '院試',
           summary: '理科大の推薦院試が初旬、月末に一般入試があります',
         },
         {
-          color: 'cyan',
-          month: 'August',
+          color: 'orange accent-3',
+          month: '8',
           title: '夏休み',
           summary: 'ゼミはお休みになります。コロナ前はゼミ旅行がありました',
         },
         {
-          color: 'cyan',
-          month: 'September',
+          color: 'green darken-3',
+          month: '9',
           title: '中間報告',
           summary: '前期までの成果を報告します',
         },
         {
-          color: 'cyan',
-          month: 'December',
+          color: 'indigo darken-3',
+          month: '12',
           title: '卒論審査会用プレゼン',
           summary: '審査会用のプレゼンの内容を詰めていきます',
         },
         {
-          color: 'cyan',
-          month: 'January',
+          color: 'red accent-3',
+          month: '1',
           title: '卒論執筆',
           summary: 'いそがしくなります',
         },
         {
-          color: 'cyan',
-          month: 'February',
+          color: 'blue accent-3',
+          month: '2',
           title: '卒論審査会',
           summary: '二月の初旬に審査会があります。7分間のプレゼンテーションです。',
         },
