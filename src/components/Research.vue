@@ -5,18 +5,14 @@
 <v-row>
       <v-col v-for="item in items" :key="item">
         <v-card :loading="loading" href="/research"
-        class="mx-auto" width="300" height="600" padding = "20">
+        class="mx-auto" width="300" height="270" padding = "20">
           
           <v-img
-            height="200px"
+            height="180px"
             :src= "item.image.url"
           >
           </v-img>
-          <v-card-title>{{ item.title }}</v-card-title>
-
-          <v-card-text class="text--primary">
-            <div class="summary">{{ item.summary }} </div>
-          </v-card-text>
+          <v-card-text class="font-weight-black">{{ item.title }}</v-card-text>
         </v-card>
       </v-col>
     </v-row>
