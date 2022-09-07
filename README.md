@@ -1,6 +1,7 @@
 # HPはこちら
 
 https://yamamotolab.netlify.app/
+#Nuxt化バージョンが古いので更新作業します
 
 # docker
 ## docker build
